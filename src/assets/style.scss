@@ -1,68 +1,98 @@
-*{box-sizing: border-box}
-*:before,*:after{box-sizing: border-box;}
-*{margin:0; padding:0;}
-ul,ol{list-style: none;}
-a{color: inherit;
-  text-decoration: none;}
-img{max-width: 100%;max-height:100%;}
-
-body{
-  background-image: url("./images/22.jpg");
-  background-repeat: no-repeat;//确保背景图片不会在页面中重复
-  background-size: auto;//将图片缩放到适合整个页面的大小
+* {
+  box-sizing: border-box
 }
-.globalHeader{
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body {
+  background-image: url("./images/22.jpg");
+  background-repeat: no-repeat; //确保背景图片不会在页面中重复
+  background-size: auto; //将图片缩放到适合整个页面的大小
+}
+
+.globalHeader {
   text-align: center;
   margin: 20px;
 }
+
 @media (min-width: 500px) {
   .globalHeader {
     margin: 60px 0 100px;
   }
 }
-.searchForm{
+
+.searchForm {
   display: flex;
   justify-content: space-between;
 
+  &:hover {
+    box-shadow: rgb(0 0 0 / 30%) 0 0 10px;
+    width: 530px;
+  }
 }
 
-@media(min-width:500px){
+@media(min-width: 500px) {
   .searchForm {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-.ls-logo{
+
+.ls-logo {
   font-size: 128px;
   font-weight: bold;
-  font-family: cursive,Brush Script MT;
+  font-family: cursive, Brush Script MT;
   color: #cbe3e5;
   filter: blur(8px);
-    //#fab1cf;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-.ls-logo::before{
+
+.ls-logo::before {
   content: "L";
   margin-right: 128px;
 }
-.ls-logo::after{
+
+.ls-logo::after {
   content: "s";
   position: relative;
   top: 0.2em;
   left: -0.9em;
 }
-.searchForm > input{
+
+.searchForm > input {
   width: 100%;
   margin-right: 10px;
   height: 40px;
   padding: 0 10px;
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 4px;
   text-align: center;
 }
-.searchForm > button{
+
+.searchForm > button {
   white-space: nowrap;
   padding: 0 4px;
   border: none;
@@ -73,68 +103,134 @@ body{
   position: absolute;
   right: 12px;
   top: 10px;
+
+  &::before {
+    content: '';
+    display: block;
+    background-size: 210% 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.4) 50%) right bottom;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 50px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+
+  }
+
+  &:hover::before {
+    background: #fdc6cc;
+    width: 100%;
+    transition: all 1s ease;
+  }
 }
 
-.globalMain{
+.globalMain {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.siteList{
-  margin: 20px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
+.siteList {
+  margin: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-@media (min-width: 500px){
-  .siteList{
+@media (min-width: 500px) {
+  .siteList {
     margin-left: 0;
     margin-right: -25px;
     justify-content: flex-start;
   }
 }
 
-.siteList > li{
+.siteList > li {
   margin-bottom: 10px;
 }
 
-@media(min-width: 500px){
+@media(min-width: 500px) {
   .siteList > li {
     margin-right: 25px;
   }
 }
 
-.siteList .sites{
-  width: 160px;
+.siteList .sites {
+  width: 80px;
+  //160px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
+  //background: white;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 20px 0;
+  border-radius: 20px;
+  padding: 4px 0;
   position: relative;
   cursor: pointer;
+  @extend .btn;
 }
-.siteList .addButton{
+
+.siteList .addButton {
   border: 1px solid #ddd;
-  background: white;
-  width: 160px;
+  //background: white;
+  width: 80px;
   display: flex;
+  border-radius: 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 4px 0;
+  @extend .btn;
 }
 
-.siteList .addButton .text{
+.siteList .addButton .text {
   font-size: 14px;
   margin-top: 4px;
 }
-.siteList .sites > span{
+
+.siteList {
+  li {
+    img {
+      box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+      border-radius: 12px;
+      align-items: center;
+      box-sizing: border-box;
+      width: var(--top-site-black-plate-width, 44px);
+      height: var(--top-site-black-plate-height, 44px);
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
+
+.btn {
+  width: 75px;
+  height: 75px;
+  border-radius: 20px;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, gold, deeppink) 1;
+  clip-path: inset(0px round 10px);
+  animation: huerotate 6s infinite linear;
+  filter: hue-rotate(360deg);
+}
+
+@keyframes huerotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.siteList .sites > span {
   position: absolute;
   right: 2px;
   top: 0;
@@ -145,20 +241,26 @@ body{
 .siteList .sites:hover > span {
   display: block;
 }
-.weather{
+
+.weather {
   width: 30px;
   height: 12px;
   left: 164px;
 }
-.dropdownMenu > .searchBarBtn{
+
+.dropdownMenu > .searchBarBtn {
   position: fixed;
   font-size: 16px;
   height: 28px;
-  padding: 0 ;
-  background: #ffffff;
+  padding: 4px;
   top: 213px;
-  left: 436px;
+
+  &:hover {
+    background-image: linear-gradient(to right, #25aae1, #40e495);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  }
 }
+
 .icons {
   width: 1em;
   height: 1em;
