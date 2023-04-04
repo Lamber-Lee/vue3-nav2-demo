@@ -1,6 +1,5 @@
 <template>
   <div class="dropdown">
-    <!--<input  v-model="searchQuery" @input="filterOptions">-->
     <ul>
       <li v-for="(option, index) in filteredOptions"
           :key="index" @click="selectOption(option)">

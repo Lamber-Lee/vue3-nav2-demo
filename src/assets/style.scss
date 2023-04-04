@@ -163,23 +163,22 @@ body {
 
 .siteList .sites {
   width: 80px;
-  //160px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  //background: white;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 4px 0;
   position: relative;
   cursor: pointer;
-  @extend .btn;
+
 }
 
 .siteList .addButton {
   border: 1px solid #ddd;
-  //background: white;
+  background: white;
   width: 80px;
   display: flex;
   border-radius: 20px;
@@ -187,7 +186,6 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 4px 0;
-  @extend .btn;
 }
 
 .siteList .addButton .text {
@@ -207,26 +205,6 @@ body {
       justify-content: center;
       display: flex;
     }
-  }
-}
-
-.btn {
-  width: 75px;
-  height: 75px;
-  border-radius: 20px;
-  border: 2px solid;
-  border-image: linear-gradient(45deg, gold, deeppink) 1;
-  clip-path: inset(0px round 10px);
-  animation: huerotate 6s infinite linear;
-  filter: hue-rotate(360deg);
-}
-
-@keyframes huerotate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
   }
 }
 

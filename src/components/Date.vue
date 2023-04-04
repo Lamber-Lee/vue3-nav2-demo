@@ -24,7 +24,7 @@ const getDate = function () {
 
 <style lang="scss" scoped>
 div{
-  width: 15%;
+  width: 12%;
   position: relative;
   text-align: center;
   font-size: 16px;

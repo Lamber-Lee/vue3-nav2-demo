@@ -55,10 +55,10 @@ export default {
     });
 
     const inputValue = ref();
-    const x = localStorage.getItem('x'); //读取x数据
+    let x = localStorage.getItem('x'); //读取x数据
 
 
-    const xObject = JSON.parse(x);// json字符串转化为json对象
+
     const sites = ref();
 
     const deleteSite = (e) => { //删除不想要的网址
@@ -76,11 +76,14 @@ export default {
     ];
 
 
-    if (xObject) {
-      sites.value = xObject;
-    } else {
-      sites.value = initSites;
+    if (x){
+      localStorage.setItem('x',JSON.stringify(initSites)) //若x不存在则读取initSites的数据
+      x = localStorage.getItem('x');//重新存储 更新X 数据
     }
+
+// json字符串转化为json对象
+    sites.value = JSON.parse(x); //
+
     const search = () => {
       window.location.href = msg.value + inputValue.value;//选择浏览器后 进行搜索
 
