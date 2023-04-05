@@ -78,14 +78,14 @@ export default {
     ];
 
 
-    if (x){
+    if (!x){
       localStorage.setItem('x',JSON.stringify(initSites)) //若x不存在则读取initSites的数据
       x = localStorage.getItem('x');//重新存储 更新X 数据
     }
 
 // json字符串转化为json对象
     sites.value = JSON.parse(x); //
-
+    console.log(sites.value);
     const search = () => {
       window.location.href = msg.value + inputValue.value;//选择浏览器后 进行搜索
 
