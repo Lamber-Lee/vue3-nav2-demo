@@ -26,27 +26,30 @@ img {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  position:relative;
-  text-align:center;
-  &::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    margin:0;
-    width:100%;
-    height:100%;
-    background:transparent url("./images/22.jpg") center center no-repeat;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bg {
+  width: 99vw;
+  height: 96vh;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     //background-image: url("./images/22.jpg");
     //background-repeat: no-repeat; //确保背景图片不会在页面中重复
     //background-size: auto; //将图片缩放到适合整个页面的大小
-    filter:blur(5px);
-    z-index:-1;
-    background-size: 100% 100%;
-
-    background-attachment:fixed;
+    filter: blur(5px);
+    z-index: -1;
+    background-size: cover;
+    background: transparent url("./images/22.jpg") no-repeat fixed center center;
 
   }
 }
@@ -67,10 +70,6 @@ body {
   display: flex;
   justify-content: space-between;
 
-  &:hover {
-    box-shadow: rgb(0 0 0 / 30%) 0 0 10px;
-    width: 530px;
-  }
 }
 
 @media(min-width: 500px) {
@@ -111,6 +110,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   text-align: center;
+
 }
 
 .searchForm > button {
@@ -248,11 +248,11 @@ body {
 }
 
 .dropdownMenu > .searchBarBtn {
-  position: fixed;
-  font-size: 16px;
-  height: 28px;
+  position: initial;
+  font-size: 21px;
+  height: 40px;
   padding: 4px;
-  top: 213px;
+
 
   &:hover {
     background-image: linear-gradient(to right, #25aae1, #40e495);

@@ -1,6 +1,6 @@
 <template>
   <div>
-   {{ date }}
+    {{ date }}
   </div>
 </template>
 
@@ -23,11 +23,12 @@ const getDate = function () {
 </script>
 
 <style lang="scss" scoped>
-div{
+div {
   width: 12%;
   position: relative;
   text-align: center;
   font-size: 16px;
+
   &::before {
     content: "";
     position: absolute;
@@ -40,15 +41,30 @@ div{
     transition: all .5s;
     animation: clippath 3s infinite linear;
   }
+
   @keyframes clippath {
-    0%, 100% { clip-path: inset(0 0 95% 0); }
-    25% { clip-path: inset(0 95% 0 0); }
-    50% { clip-path: inset(95% 0 0 0); }
-    75% { clip-path: inset(0 0 0 95%); }
+    0%, 100% {
+      clip-path: inset(0 0 95% 0);
+    }
+    25% {
+      clip-path: inset(0 95% 0 0);
+    }
+    50% {
+      clip-path: inset(95% 0 0 0);
+    }
+    75% {
+      clip-path: inset(0 0 0 95%);
+    }
   }
 }
 
-.date{
+@media(max-width: 500px) {
+  div {
+    width: 172px
+  }
+}
+
+.date {
 
 
   position: fixed;
@@ -58,17 +74,18 @@ div{
   z-index: 3;
   text-align: center;
   white-space: pre-wrap;
-  background: -webkit-linear-gradient(left, #0f0, #00f) 0 0 no-repeat;/*设置线性渐变*/
-  -webkit-background-size: 80px;                        /*设置背景大小*/
-  -webkit-background-clip: text;                            /*背景被裁剪到文字*/
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.3);        /*设置文字的填充颜色*/
+  background: -webkit-linear-gradient(left, #0f0, #00f) 0 0 no-repeat; /*设置线性渐变*/
+  -webkit-background-size: 80px; /*设置背景大小*/
+  -webkit-background-clip: text; /*背景被裁剪到文字*/
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.3); /*设置文字的填充颜色*/
   -webkit-animation: shine 3s infinite;
 }
-@-webkit-keyframes shine{   /*创建动画*/
-  0%{
+
+@-webkit-keyframes shine { /*创建动画*/
+  0% {
     background-position: 0 0;
   }
-  100%{
+  100% {
     background-position: 100% 100%;
   }
 }

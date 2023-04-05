@@ -1,4 +1,5 @@
 <template>
+  <div class="bg ">
   <header class="globalHeader">
     <div class="ls-logo"></div>
     <div class="searchForm">
@@ -33,6 +34,7 @@
       </ul>
     </main>
   </header>
+  </div>
 </template>
 
 <script lang="ts">
