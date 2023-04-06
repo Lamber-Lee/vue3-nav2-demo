@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   publicPath: process.env.NODE_ENV === 'production'
     ? '/vue3-nav2-website/'
-    : '@',
+    : '../../',
   plugins: [vue()],
   resolve: {
     alias: {
