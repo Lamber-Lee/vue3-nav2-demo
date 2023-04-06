@@ -14,7 +14,7 @@
         <MultiBrowser @switchBrowser="switchBrowser" v-if="showOptions" class="browserList"></MultiBrowser>
       </div>
       <button @click="search">
-        <img class="icons" src="../assets/images/search.svg" alt="">
+        <img class="icons" src="src/assets/images/search.svg" alt="">
       </button>
     </div>
     <main class="globalMain">
